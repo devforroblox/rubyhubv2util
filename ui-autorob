@@ -1,0 +1,62 @@
+local player = game.Players.LocalPlayer
+local gui = Instance.new("ScreenGui", player:WaitForChild("PlayerGui"))
+gui.Name = "v2"
+gui.ResetOnSpawn = false
+
+local mainFrame = Instance.new("Frame", gui)
+mainFrame.Size = UDim2.new(0, 300, 0, 200)
+mainFrame.Position = UDim2.new(0.5, -699, 0.5, 250)
+mainFrame.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
+mainFrame.BorderSizePixel = 0
+mainFrame.Name = "MainFrame"
+
+local corner = Instance.new("UICorner", mainFrame)
+corner.CornerRadius = UDim.new(0, 12)
+
+local stroke = Instance.new("UIStroke", mainFrame)
+stroke.Color = Color3.fromRGB(255, 0, 80)
+stroke.Thickness = 2
+
+local title = Instance.new("TextLabel", mainFrame)
+title.Size = UDim2.new(1, 0, 0, 50)
+title.Position = UDim2.new(0, 0, 0, 0)
+title.BackgroundTransparency = 1
+title.Text = "Ruby-Hub V2 Auto-Rob"
+title.Font = Enum.Font.GothamBold
+title.TextSize = 28
+title.TextColor3 = Color3.fromRGB(255, 0, 80)
+
+local creators = Instance.new("TextLabel", mainFrame)
+creators.Size = UDim2.new(1, -40, 0, 60)
+creators.Position = UDim2.new(0, 20, 0, 60)
+creators.BackgroundTransparency = 1
+creators.Text = "Created By:\n▶ Wicky\n▶ EvilDragon"
+creators.Font = Enum.Font.Gotham
+creators.TextSize = 18
+creators.TextColor3 = Color3.fromRGB(230, 230, 230)
+creators.TextXAlignment = Enum.TextXAlignment.Left
+creators.TextYAlignment = Enum.TextYAlignment.Top
+
+local discord = Instance.new("TextLabel", mainFrame)
+discord.Size = UDim2.new(1, -40, 0, 50)
+discord.Position = UDim2.new(0, 20, 0, 160)
+discord.BackgroundTransparency = 1
+discord.Text = "Discord:\n▶ discord.gg/Bz7krcQxh2"
+discord.Font = Enum.Font.GothamMedium
+discord.TextSize = 16
+discord.TextColor3 = Color3.fromRGB(150, 200, 255)
+discord.TextXAlignment = Enum.TextXAlignment.Left
+discord.TextYAlignment = Enum.TextYAlignment.Top
+
+mainFrame.BackgroundTransparency = 1
+title.TextTransparency = 1
+creators.TextTransparency = 1
+discord.TextTransparency = 1
+
+for i = 1, 20 do
+	wait(0.05)
+	mainFrame.BackgroundTransparency = 1 - i * 0.05
+	title.TextTransparency = 1 - i * 0.1
+	creators.TextTransparency = 1 - i * 0.1
+	discord.TextTransparency = 1 - i * 0.1
+end
